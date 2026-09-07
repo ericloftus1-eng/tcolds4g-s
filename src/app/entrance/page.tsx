@@ -39,7 +39,7 @@ export default function EntrancePage() {
           >
             <Image
               src="/assets/images/IMG_20260902_232338110_HDR-1788522192762.jpg"
-              alt="TCoLDS sun moon church logo — golden sun and crescent moon over a church silhouette"
+              alt="TCoLDS logo"
               width={176}
               height={176}
               className="w-full h-full object-cover"

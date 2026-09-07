@@ -17,15 +17,15 @@ interface UploadFile {
 }
 
 const contentTypes: { id: ContentType; label: string; icon: React.ElementType; desc: string; color: string; accept: string }[] = [
-  { id: 'video', label: 'Video Sermon', icon: Video, desc: 'Full-length comedy sets & sermons', color: '#4EA0C0', accept: 'video/*' },
-  { id: 'clip', label: 'Holy Clip', icon: Film, desc: 'Short-form clips under 60 seconds', color: '#E07B39', accept: 'video/*' },
-  { id: 'sermon', label: 'Text Sermon', icon: BookOpen, desc: 'Written comedy scripture & lore', color: '#7B4EA0', accept: '.txt,.doc,.docx' },
+  { id: 'video', label: 'Video', icon: Video, desc: 'Full-length comedy sets and videos', color: '#4EA0C0', accept: 'video/*' },
+  { id: 'clip', label: 'Clip', icon: Film, desc: 'Short-form clips under 60 seconds', color: '#E07B39', accept: 'video/*' },
+  { id: 'sermon', label: 'Text Post', icon: BookOpen, desc: 'Written comedy and creator updates', color: '#7B4EA0', accept: '.txt,.doc,.docx' },
   { id: 'audio', label: 'Audio Riff', desc: 'Podcast-style audio content', icon: Music, color: '#52B788', accept: 'audio/*' },
 ];
 
 const visibilityOptions: { id: Visibility; label: string; icon: React.ElementType; desc: string }[] = [
   { id: 'public', label: 'Public', icon: Globe, desc: 'Anyone can watch' },
-  { id: 'members', label: 'Members Only', icon: Users, desc: 'Registered congregation' },
+  { id: 'members', label: 'Members Only', icon: Users, desc: 'Registered community members' },
   { id: 'private', label: 'Private', icon: Lock, desc: 'Only you' },
 ];
 
@@ -170,9 +170,9 @@ export default function UploadStudioPage() {
                 Upload Studio
               </span>
             </div>
-            <h1 className="text-hero-xl text-gold">Preach to the Masses</h1>
+            <h1 className="text-hero-xl text-gold">Share Your Work</h1>
             <p className="text-sm font-500 mt-0.5" style={{ color: 'var(--muted-foreground)' }}>
-              Upload your content and let the congregation be blessed.
+              Upload your content and share it with the community.
             </p>
           </div>
           <div className="flex items-center gap-2">
@@ -196,7 +196,7 @@ export default function UploadStudioPage() {
             <div className="rounded-2xl border overflow-hidden" style={{ background: 'var(--card)', borderColor: 'var(--border)' }}>
               <div className="px-5 py-4 border-b" style={{ borderColor: 'var(--border)' }}>
                 <h2 className="font-700 text-sm" style={{ color: 'var(--foreground)' }}>Content Type</h2>
-                <p className="text-xs mt-0.5" style={{ color: 'var(--muted-foreground)' }}>What kind of sermon are you delivering?</p>
+                <p className="text-xs mt-0.5" style={{ color: 'var(--muted-foreground)' }}>What kind of content are you sharing?</p>
               </div>
               <div className="p-5 grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {contentTypes.map((ct) => (
@@ -250,7 +250,7 @@ export default function UploadStudioPage() {
                     </div>
                     <div className="text-center">
                       <p className="font-700 text-sm" style={{ color: 'var(--foreground)' }}>
-                        {dragOver ? 'Drop it like it\'s holy' : 'Drag & drop your sermon here'}
+                        {dragOver ? 'Drop it here' : 'Drag and drop your content here'}
                       </p>
                       <p className="text-xs mt-1" style={{ color: 'var(--muted-foreground)' }}>
                         or <span style={{ color: 'var(--primary)', fontWeight: 700 }}>browse files</span> — MP4, MOV, MP3, PDF up to 2GB
@@ -311,7 +311,7 @@ export default function UploadStudioPage() {
             {/* Metadata */}
             <div className="rounded-2xl border overflow-hidden" style={{ background: 'var(--card)', borderColor: 'var(--border)' }}>
               <div className="px-5 py-4 border-b" style={{ borderColor: 'var(--border)' }}>
-                <h2 className="font-700 text-sm" style={{ color: 'var(--foreground)' }}>Sermon Details</h2>
+                <h2 className="font-700 text-sm" style={{ color: 'var(--foreground)' }}>Content Details</h2>
                 <p className="text-xs mt-0.5" style={{ color: 'var(--muted-foreground)' }}>Give your content a title, description, and tags</p>
               </div>
               <div className="p-5 space-y-4">
@@ -398,7 +398,7 @@ export default function UploadStudioPage() {
             <div className="rounded-2xl border overflow-hidden" style={{ background: 'var(--card)', borderColor: 'var(--border)' }}>
               <div className="px-5 py-4 border-b" style={{ borderColor: 'var(--border)' }}>
                 <h2 className="font-700 text-sm" style={{ color: 'var(--foreground)' }}>Thumbnail</h2>
-                <p className="text-xs mt-0.5" style={{ color: 'var(--muted-foreground)' }}>The face of your sermon — 16:9 recommended</p>
+                <p className="text-xs mt-0.5" style={{ color: 'var(--muted-foreground)' }}>Your cover image — 16:9 recommended</p>
               </div>
               <div className="p-5">
                 <div className="flex items-start gap-4 flex-wrap">
@@ -481,7 +481,7 @@ export default function UploadStudioPage() {
 
                 {/* Schedule */}
                 <div>
-                  <label className="block text-xs font-700 mb-2" style={{ color: 'var(--foreground)' }}>When to Preach</label>
+                  <label className="block text-xs font-700 mb-2" style={{ color: 'var(--foreground)' }}>When to publish</label>
                   <div className="flex gap-2 mb-3">
                     {(['now', 'schedule'] as ScheduleMode[]).map((mode) => (
                       <button
@@ -552,7 +552,7 @@ export default function UploadStudioPage() {
                   style={{ background: 'var(--primary)', color: 'var(--primary-foreground)' }}
                 >
                   <Sparkles size={15} />
-                  {scheduleMode === 'schedule' ? 'Schedule Sermon' : 'Publish Sermon'}
+                  {scheduleMode === 'schedule' ? 'Schedule Post' : 'Publish Post'}
                 </button>
                 {!title.trim() && (
                   <p className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--muted-foreground)' }}>
@@ -587,7 +587,7 @@ export default function UploadStudioPage() {
                   )}
                 </div>
                 <p className="text-sm font-700 leading-snug" style={{ color: title ? 'var(--foreground)' : 'var(--muted-foreground)' }}>
-                  {title || 'Your sermon title will appear here'}
+                  {title || 'Your title will appear here'}
                 </p>
                 {description && (
                   <p className="text-xs mt-1 line-clamp-2" style={{ color: 'var(--muted-foreground)' }}>{description}</p>
@@ -609,7 +609,7 @@ export default function UploadStudioPage() {
             >
               <p className="text-xs font-700 flex items-center gap-1.5 mb-2" style={{ color: '#D4AF37' }}>
                 <Star size={12} />
-                Preacher Tips
+                Creator Tips
               </p>
               <ul className="space-y-1.5">
                 {[

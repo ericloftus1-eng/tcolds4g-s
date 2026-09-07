@@ -10,10 +10,10 @@ import {
   MessageCircle,
 } from 'lucide-react';
 
-const SITE_URL = 'https://tcolds3821.builtwithrocket.new/entrance';
-const SHARE_TITLE = '⛪ The Church of Laughterday Saints — Where Comedy is the Religion';
+const SITE_URL = 'https://tcolds4g-s-tc-o-lds-rrn-100.vercel.app/entrance';
+const SHARE_TITLE = 'TCoLDS — A Community of Comedy';
 const SHARE_DESC =
-  "I just joined The Church of Laughterday Saints — a comedy platform where laughter is the gospel and you can actually get ordained. 😂 Earn Cheddar Coins, rise through clergy ranks, and watch the funniest people on the internet preach. Come join the congregation — it's free!";
+  "I just joined TCoLDS, a community for comedians and comedy fans. Discover great clips, share your work, and earn Cheddar Coin. Come join us — it's free!";
 
 interface Platform {
   id: string;
@@ -214,10 +214,10 @@ export default function SharePage() {
               className="text-3xl font-800 mb-2 tracking-tight"
               style={{ color: 'var(--foreground)' }}
             >
-              Spread the Gospel 🕍
+              Share TCoLDS
             </h1>
             <p className="text-base font-500 max-w-md mx-auto" style={{ color: 'var(--muted-foreground)' }}>
-              Share TCoLDS with your congregation. One tap — every platform.
+              Share TCoLDS with your comedy community. One tap — every platform.
             </p>
           </div>
 
@@ -234,13 +234,13 @@ export default function SharePage() {
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-xs font-600 mb-0.5" style={{ color: 'var(--primary)' }}>
-                tcolds3821.builtwithrocket.new
+                tcolds4g-s-tc-o-lds-rrn-100.vercel.app
               </p>
               <p className="text-sm font-700 leading-snug mb-1" style={{ color: 'var(--foreground)' }}>
-                ⛪ The Church of Laughterday Saints — Where Comedy is the Religion
+                TCoLDS — A Community of Comedy
               </p>
               <p className="text-xs leading-relaxed line-clamp-2" style={{ color: 'var(--muted-foreground)' }}>
-                Join 94,000+ congregation members. Get ordained, earn Cheddar Coins, and rise through the clergy ranks. Comedy is the gospel.
+                Discover comedy, share your work, and connect with creators.
               </p>
             </div>
           </div>

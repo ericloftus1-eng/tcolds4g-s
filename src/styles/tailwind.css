@@ -1,0 +1,315 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0A0A0A;
+  --foreground: #F5F0E8;
+  --primary: #D4AF37;
+  --primary-foreground: #0A0A0A;
+  --secondary: #8B1A1A;
+  --secondary-foreground: #F5F0E8;
+  --accent: #C9A227;
+  --accent-foreground: #0A0A0A;
+  --muted: #1E1E1E;
+  --muted-foreground: #9A8E7E;
+  --card: #141414;
+  --card-foreground: #F5F0E8;
+  --border: #2A2520;
+  --input: #1E1E1E;
+  --ring: #D4AF37;
+  --radius: 0.75rem;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .font-mono-data {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .text-gold {
+    color: var(--primary);
+  }
+
+  .text-crimson {
+    color: var(--secondary);
+  }
+
+  .bg-gold {
+    background-color: var(--primary);
+  }
+
+  .bg-crimson {
+    background-color: var(--secondary);
+  }
+
+  .border-gold {
+    border-color: var(--primary);
+  }
+
+  .gothic-arch {
+    clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0% 100%, 0% 38%);
+  }
+
+  .stained-gradient {
+    background: linear-gradient(135deg, #1a0a0a 0%, #0a0a14 50%, #0a1a0a 100%);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, #B8860B 100%);
+  }
+
+  .crimson-gradient {
+    background: linear-gradient(135deg, var(--secondary) 0%, #5C0E0E 100%);
+  }
+
+  .card-hover {
+    transition: all 0.2s ease;
+  }
+
+  .card-hover:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.12);
+  }
+
+  .rank-saint {
+    background: linear-gradient(135deg, #D4AF37, #FFD700, #B8860B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .rank-cardinal {
+    background: linear-gradient(135deg, #8B1A1A, #CC2222);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .rank-archbishop {
+    background: linear-gradient(135deg, #7B4EA0, #A855F7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .rank-bishop {
+    background: linear-gradient(135deg, #1E6B8A, #38BDF8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .rank-minister {
+    background: linear-gradient(135deg, #2D6A4F, #52B788);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .rank-deacon {
+    color: #C9A227;
+  }
+
+  .rank-layperson {
+    color: #8A8070;
+  }
+
+  .live-pulse {
+    animation: live-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes live-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+  }
+
+  .coin-shine {
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+    animation: coin-shine 3s ease-in-out infinite;
+    background-size: 200% 100%;
+  }
+
+  @keyframes coin-shine {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.4s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: var(--border);
+    border-radius: 2px;
+  }
+
+  .glass-card {
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .ordination-glow {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.25), 0 0 60px rgba(212, 175, 55, 0.08);
+  }
+
+  .text-hero-xl {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  .text-display-lg {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .blob-gold {
+    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    filter: blur(40px);
+  }
+
+  .blob-crimson {
+    background: radial-gradient(ellipse at center, rgba(139, 26, 26, 0.2) 0%, transparent 70%);
+    filter: blur(40px);
+  }
+
+  .rank-badge-saint {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #B8860B 100%);
+    color: #0A0A0A;
+  }
+
+  .rank-badge-cardinal {
+    background: linear-gradient(135deg, #8B1A1A 0%, #CC2222 100%);
+    color: #F5F0E8;
+  }
+
+  .rank-badge-archbishop {
+    background: linear-gradient(135deg, #7B4EA0 0%, #A855F7 100%);
+    color: #F5F0E8;
+  }
+
+  .rank-badge-bishop {
+    background: linear-gradient(135deg, #1E6B8A 0%, #38BDF8 100%);
+    color: #F5F0E8;
+  }
+
+  .rank-badge-minister {
+    background: linear-gradient(135deg, #2D6A4F 0%, #52B788 100%);
+    color: #F5F0E8;
+  }
+
+  .rank-badge-deacon {
+    background: linear-gradient(135deg, #6B5000 0%, #C9A227 100%);
+    color: #0A0A0A;
+  }
+
+  .rank-badge-layperson {
+    background: #2A2520;
+    color: #8A8070;
+  }
+
+  /* ── Small print visibility ── */
+  /* Boost legibility of fine-print text across the platform */
+  .text-fine {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #A89880;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .text-caption {
+    font-size: 12px;
+    line-height: 1.55;
+    color: #B0A090;
+    font-weight: 500;
+  }
+
+  /* ── Melting / dripping CC text effect ── */
+  .cc-melt {
+    display: inline-block;
+    position: relative;
+    font-weight: 800;
+    color: #D4AF37;
+    letter-spacing: 0.12em;
+    text-shadow:
+      0 2px 4px rgba(212, 175, 55, 0.6),
+      0 4px 8px rgba(180, 120, 0, 0.4);
+    filter: url(#cc-drip-filter);
+  }
+
+  .cc-melt::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #FFD700;
+    opacity: 0.35;
+    transform: scaleY(1.08) translateY(1px);
+    filter: blur(0.5px);
+    pointer-events: none;
+  }
+
+  /* SVG drip filter — applied via inline SVG in layout */
+  @keyframes ccDrip {
+    0%   { filter: url(#cc-drip-filter-a); }
+    50%  { filter: url(#cc-drip-filter-b); }
+    100% { filter: url(#cc-drip-filter-a); }
+  }
+
+  @keyframes slideInNotif {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}

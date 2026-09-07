@@ -296,7 +296,7 @@ function CheddarCoinBack({ size = 48, className = '' }: { size?: number; classNa
         <ellipse cx="-6" cy="-11" rx="4" ry="2" fill="white" opacity="0.3" transform="rotate(-20,-6,-11)" />
       </g>
 
-      {/* "10 CC = $1" text */}
+      {/* "CHEESY COIN" text */}
       <text
         x="50"
         y="85"
@@ -307,7 +307,7 @@ function CheddarCoinBack({ size = 48, className = '' }: { size?: number; classNa
         fill="#6B4A00"
         letterSpacing="0.5"
       >
-        10 CC = $1
+        CHEESY COIN
       </text>
       <text
         x="49.5"
@@ -320,7 +320,7 @@ function CheddarCoinBack({ size = 48, className = '' }: { size?: number; classNa
         letterSpacing="0.5"
         opacity="0.45"
       >
-        10 CC = $1
+        CHEESY COIN
       </text>
 
       {/* Specular highlight */}
@@ -341,7 +341,7 @@ export function CheddarCoinDisplay({ size = 48 }: { size?: number }) {
       style={{ width: size, height: size, perspective: '600px' }}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
-      title="Cheddar Coin — 10 CC = $1 USD"
+      title="Cheddar Coin"
     >
       <div
         style={{
@@ -380,7 +380,7 @@ export default function CheddarCoinWidget({
     await new Promise((r) => setTimeout(r, 1200));
     setDonating(false);
     setShowModal(false);
-    toast.success(`🧀 ${amount} CC passed the collection plate to ${recipientName}!`);
+    toast.success(`Sent ${amount} CC to ${recipientName}.`);
   };
 
   if (compact) {
@@ -392,7 +392,7 @@ export default function CheddarCoinWidget({
           style={{ background: 'var(--primary)', color: 'var(--primary-foreground)' }}
         >
           <CheddarCoinFace size={14} />
-          Tithe
+          Tip
         </button>
         {showModal && (
           <DonateModal
@@ -418,7 +418,7 @@ export default function CheddarCoinWidget({
         style={{ background: 'var(--primary)', color: 'var(--primary-foreground)' }}
       >
         <CheddarCoinFace size={18} />
-        Pass the Collection Plate
+        Send CC
       </button>
       {showModal && (
         <DonateModal
@@ -474,10 +474,10 @@ function DonateModal({
           <div className="flex justify-center mb-3">
             <CheddarCoinDisplay size={72} />
           </div>
-          <p className="text-xs mb-1" style={{ color: 'var(--muted-foreground)' }}>Hover coin to flip · 10 CC = $1 USD</p>
-          <h3 className="font-700 text-lg">Pass the Collection Plate</h3>
+          <p className="text-xs mb-1" style={{ color: 'var(--muted-foreground)' }}>Cheddar Coin is platform currency only.</p>
+          <h3 className="font-700 text-lg">Send CC</h3>
           <p className="text-xs mt-1" style={{ color: 'var(--muted-foreground)' }}>
-            Tithe to{' '}
+            Send CC to{' '}
             <span style={{ color: 'var(--primary)' }} className="font-600">
               {recipientName}
             </span>
@@ -486,7 +486,7 @@ function DonateModal({
             )}
           </p>
           <p className="text-xs mt-1" style={{ color: 'var(--muted-foreground)' }}>
-            Tax-free income for ordained clergy 🧀
+            Cheddar Coin is platform currency only.
           </p>
         </div>
 
@@ -540,9 +540,6 @@ function DonateModal({
           <span className="font-mono-data font-600" style={{ color: 'var(--primary)' }}>
             1,240 CC
           </span>
-          <span className="ml-2" style={{ color: 'var(--muted-foreground)' }}>
-            (≈ $124.00 USD)
-          </span>
         </p>
 
         <button
@@ -554,12 +551,12 @@ function DonateModal({
           {donating ? (
             <>
               <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-              Blessing the coins...
+              Sending CC...
             </>
           ) : (
             <>
               <CheddarCoinFace size={16} />
-              Tithe {amount} CC
+              Tip {amount} CC
             </>
           )}
         </button>

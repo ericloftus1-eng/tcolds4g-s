@@ -10,13 +10,13 @@ import Icon from '@/components/ui/AppIcon';
 const destinations = [
   {
     id: 'mass-sermons',
-    label: 'Mass Sermons',
-    sublabel: 'The Pulpit — Main congregation feed',
+    label: 'Featured Videos',
+    sublabel: 'The Pulpit — Main community feed',
     icon: Flame,
     gradient: 'linear-gradient(135deg, #1a0a0a, #3d1a00)',
     borderColor: 'var(--primary)',
     accentColor: 'var(--primary)',
-    description: 'Reach the full congregation. Best for clean-to-mild comedy, stand-up clips, and sermons.',
+    description: 'Reach the full community. Best for stand-up clips, sketches, and comedy videos.',
     badge: 'Main Stage',
   },
   {
@@ -43,24 +43,24 @@ const destinations = [
   },
   {
     id: 'live-mass',
-    label: 'Live Mass',
+    label: 'Live Show',
     sublabel: 'Schedule a live performance',
     icon: Radio,
     gradient: 'linear-gradient(135deg, #1a0a0a, #2e0a0a)',
     borderColor: 'var(--secondary)',
     accentColor: 'var(--secondary)',
-    description: 'Schedule a live set or sermon. Your congregation will be notified before you go live.',
+    description: 'Schedule a live set. Your followers will be notified before you go live.',
     badge: 'Live',
   },
   {
     id: 'entrance',
-    label: 'Church Entrance',
+    label: 'Featured Showcase',
     sublabel: 'Featured in the lobby showcase',
     icon: Church,
     gradient: 'linear-gradient(135deg, #0a0a0a, #1a1a1a)',
     borderColor: 'var(--border)',
     accentColor: 'var(--muted-foreground)',
-    description: 'Highlighted at the church entrance for new visitors and first-time congregation members.',
+    description: 'Highlighted for new visitors and first-time community members.',
     badge: 'Featured',
   },
 ];
@@ -226,10 +226,10 @@ export default function SubmitPage() {
           </div>
           <div>
             <h1 className="text-2xl font-800" style={{ color: 'var(--foreground)' }}>
-              Submit a Sermon
+              Submit a Video
             </h1>
             <p className="text-xs" style={{ color: 'var(--muted-foreground)' }}>
-              Upload your short-form video and choose where it preaches
+              Upload your video and choose where to share it
             </p>
           </div>
         </div>
@@ -356,7 +356,7 @@ export default function SubmitPage() {
                 style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
               >
                 <div className="px-5 pt-5 pb-3 border-b" style={{ borderColor: 'var(--border)' }}>
-                  <h2 className="font-700 text-sm" style={{ color: 'var(--foreground)' }}>Sermon Details</h2>
+                  <h2 className="font-700 text-sm" style={{ color: 'var(--foreground)' }}>Video Details</h2>
                 </div>
                 <div className="p-5 flex flex-col gap-4">
                   <div>
@@ -412,7 +412,7 @@ export default function SubmitPage() {
                 <div className="px-5 pt-5 pb-3 border-b" style={{ borderColor: 'var(--border)' }}>
                   <h2 className="font-700 text-sm flex items-center gap-2" style={{ color: 'var(--foreground)' }}>
                     <Tag size={14} style={{ color: 'var(--primary)' }} />
-                    Content Tags
+                    Tags
                     <span className="text-xs font-400 ml-auto" style={{ color: 'var(--muted-foreground)' }}>
                       {selectedTags.length}/5 selected
                     </span>
@@ -611,12 +611,12 @@ export default function SubmitPage() {
                   ) : (
                     <>
                       <Mic size={15} />
-                      Preach It — Submit Sermon
+                      Submit Video
                     </>
                   )}
                 </button>
                 <p className="text-center text-xs mt-3" style={{ color: 'var(--muted-foreground)' }}>
-                  Reviewed by the Holy Moderation Council within 24h
+                  Reviewed by the moderation team within 24h
                 </p>
               </div>
             </div>

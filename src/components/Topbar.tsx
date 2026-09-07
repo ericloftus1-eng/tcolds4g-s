@@ -50,7 +50,7 @@ const navItems = [
   { label: 'The Pulpit', href: '/pulpit', icon: Flame },
   { label: 'The Basement', href: '/basement', icon: Moon },
   { label: 'Green Room', href: '/green-room', icon: Leaf },
-  { label: 'Live Mass', href: '/green-room', icon: Radio },
+  { label: 'Live Shows', href: '/pulpit', icon: Radio },
   { label: 'Submit', href: '/submit', icon: Upload },
 ];
 
@@ -179,7 +179,7 @@ export default function Topbar() {
                 className="text-xs font-500"
                 style={{ color: 'var(--foreground)', fontSize: '11px', opacity: 0.85 }}
               >
-                Church of Laughterday Saints
+                A Community of Comedy
               </span>
             </div>
           </Link>
@@ -401,7 +401,7 @@ export default function Topbar() {
               }}
             >
               <Search size={14} />
-              <span className="hidden xl:block">Search sermons...</span>
+              <span className="hidden xl:block">Search videos...</span>
               <span
                 className="hidden xl:block text-xs font-mono px-1 rounded"
                 style={{ background: 'var(--muted)', color: 'var(--muted-foreground)' }}
@@ -836,7 +836,7 @@ export default function Topbar() {
                     onClick={() => setMobileOpen(false)}
                   >
                     <LogIn size={14} />
-                    Join the Congregation
+                    Create Account
                   </Link>
                 </>
               )}
